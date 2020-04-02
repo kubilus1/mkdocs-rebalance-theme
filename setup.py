@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
+VERSION = '0.0.5'
 
 
 setup(
@@ -15,7 +15,7 @@ setup(
     include_package_data=True,
     entry_points={
         'mkdocs.themes': [
-            'themename = rebalance',
+            'rebalance = rebalance',
         ]
     },
     zip_safe=False
