@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/style.css" type="text/css" media='all' />
+      <link rel="stylesheet" href="{{ config.site_url|url }}style.css" type="text/css" media='all' />
     <!--<link rel="stylesheet" href="/styles.css">-->
-    <link rel="stylesheet" href="/font-awesome/font-awesome.css"
+    <link rel="stylesheet" href="{{ config.site_url|url }}font-awesome/font-awesome.css"
     type="text/css" media='all'/>
 
     <style type="text/css" media="screen">
@@ -63,8 +63,10 @@
                 <div class="entry-image-section">
                 <a href="{{ nav_item.url|url }}" class="entry-image-link">
                     <figure class="entry-image">
+                        {% if nav_item.meta.featured_image %}
                         <img width="288" max-height="342" 
-                        src="{{ nav_item.meta.featured_image }}">
+                                         src="{{ config.site_url|url }}{{ nav_item.meta.featured_image }}">
+                        {% endif %}
                     </figure>
                 </a>
                 </div>
@@ -163,8 +165,10 @@
 			</header>
             <div class="post-hero-image clear-fix">
                 <figure class="entry-image">
+                    {% if page.meta.featured_image %}
                     <img width="100%"  
-                    src="{{ page.meta.featured_image }}">
+                         src="{{ config.site_url|url }}{{ page.meta.featured_image }}">
+                    {% endif %}
                 </figure>
             </div>
 			<div class="entry-content">

@@ -1,6 +1,6 @@
 ---
 title: Hey look, that's a flood
-featured_image: /images/street1.jpeg
+featured_image: images/street1.jpeg
 date: March 8, 2018
 author: Sparky McCoolihan
 index: 10
