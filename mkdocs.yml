@@ -1,0 +1,11 @@
+site_name: Mkdocs Rebalance Theme 
+site_description: Rebalance theme from Wordpress translated to mkdocs 
+site_url: https://github.com/kubilus1/mkdocs-rebalance-theme
+docs_dir: docs
+theme:
+    name: rebalance
+
+plugins:
+  - search
+  - paginate:
+      max_items: 6
