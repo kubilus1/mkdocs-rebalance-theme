@@ -15,7 +15,7 @@
             <figure class="entry-image">
                 {% if nav_item.meta.featured_image %}
                 <img width="288" max-height="342" 
-                                    src="{{ nav_item.meta.featured_image }}">
+                                 src="{% if not nav_item.meta.featured_image.startswith('http') %}{{ config.site_url|url }}{% endif %}{{ nav_item.meta.featured_image }}">
                 {% endif %}
             </figure>
         </a>

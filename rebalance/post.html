@@ -43,7 +43,7 @@
     <figure class="entry-image">
         {% if page.meta.featured_image %}
         <img width="100%"  
-                src="{{ page.meta.featured_image }}">
+                src="{% if not page.meta.featured_image.startswith('http') %}{{ config.site_url|url }}{% endif %}{{ page.meta.featured_image }}">
         {% endif %}
     </figure>
 </div>
