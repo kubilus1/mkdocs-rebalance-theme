@@ -18,5 +18,5 @@ clean:
 	- rm -rf build
 	- rm -rf dist
 
-push:
+push: pkg
 	twine upload dist/*

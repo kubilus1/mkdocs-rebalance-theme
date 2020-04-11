@@ -1,0 +1,74 @@
+<div id="infinite-wrap">
+{% for nav_item in nav %}
+    <!--<div class="section">
+    <a href="{{ nav_item.url|url }}">
+    {{ nav_item.content }}
+    </a></div>-->
+
+    {% if nav_item.children %}
+    {% for nav_item in ((nav_item.children)|sort(attribute="meta.index",reverse=True))|paginate(page=page) %}
+    {# % for nav_item in ((nav_item.children)|sort(attribute="meta.index",reverse=True))[page.start_idx:page.end_idx] % #}
+        {% if nav_item.is_page %}
+        <article class="card post type-post status-publish format-standard hentry" >
+        <div class="entry-image-section">
+        <a href="{{ nav_item.url|url }}" class="entry-image-link">
+            <figure class="entry-image">
+                {% if nav_item.meta.featured_image %}
+                <img width="288" max-height="342" 
+                                    src="{{ nav_item.meta.featured_image }}">
+                {% endif %}
+            </figure>
+        </a>
+        </div>
+        <a href="{{ nav_item.url|url }}">
+        <header id="masthead" class="entry-header">
+        <h1 class="entry-title">{{ nav_item.title }}</h1>
+        </header>
+        </a>
+        <div class="entry-content">
+        {{ nav_item.content|truncate }}
+        </div>
+        <footer class="entry-meta">
+            <span class="entry-tags">
+            {% for tag in nav_item.meta.tags %}
+            <a href="{{ config.site_url|url}}tag/{{ tag }}/" rel="tag">{{ tag }}</a>
+            {% endfor %}
+            </span>
+        </footer>
+        </article>
+        {% else %}
+            <a href="{{ nav_item.url|url }}">
+            {{ nav_item.title }}
+            </a>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+{% endfor %}
+</div>
+
+<nav class="navigation posts-navigation" role="navigation">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+        {% if not page.last_page %}
+        <div class="nav-previous">
+            <a href="{{ config.site_url|url }}page/{{ page.page_num + 1 }}/">
+                "Older posts"
+            </a>
+        </div>
+        {% endif %}
+        {% if page.page_num == 2 %}
+        <div class="nav-next">
+            <a href="{{ config.site_url|url }}">
+                "Newer posts"
+            </a>
+        </div>
+        {% elif page.page_num > 2 %}
+        <div class="nav-next">
+            <a href="{{ config.site_url|url }}page/{{ page.page_num - 1 }}/">
+                "Newer posts"
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</nav>
+

@@ -1,0 +1,53 @@
+<article class="post type-post status-publish format-standard
+    has-post-thumbnail hentry clear-fix" style="height: auto
+    !important;" >
+<header class="entry-header">
+<h1 class="entry-title">{{ page.title }}</h1>
+<div class="entry-meta">
+    {% if page.meta.author %}<span class="author vcard">
+        <a href="{{ config.site_url|url }}author/{{ page.meta.author|url}}">
+            {{ page.meta.author }}</a></span>{% endif %}
+    {% if page.meta.date %}<span class="entry-tags-date">
+        <a href="{{ page.url|url }}">
+        {{ page.meta.date }}
+        </a></span>{% endif %}
+    {% if page.meta.category %}<span class="entry-categories">
+        <a href="{{ config.site_url|url }}/category/{{ page.meta.category|url }}">
+        {{ page.meta.category }}
+        </a></span>{% endif %}
+    {% if page.edit_url %}<span class="edit-link">
+        <a href="{{ page.edit_url }}">
+            {{ page.edit_url }}</a></span>{% endif %}
+</div>
+<nav class="navigation post-navigation" role="navigation">
+    <h2 class="screen-reader-text">Post navigation</h2>
+    <div class="nav-links">
+        <div class="nav-previous">
+            <a href="{{ page.previous_page.url|url }}" rel="prev">
+                <span class="meta-nav" aria-hidden="true">
+                    "Previous"
+                </span>
+            </a>
+        </div>
+        <div class="nav-next">
+            <a href="{{ page.next_page.url|url }}" rel="prev">
+                <span class="meta-nav" aria-hidden="true">
+                    "Next"
+                </span>
+            </a>
+        </div>
+    </div>
+</nav>
+</header>
+<div class="post-hero-image clear-fix">
+    <figure class="entry-image">
+        {% if page.meta.featured_image %}
+        <img width="100%"  
+                src="{{ page.meta.featured_image }}">
+        {% endif %}
+    </figure>
+</div>
+<div class="entry-content">
+{{ page.content }}
+</div>
+</article>
