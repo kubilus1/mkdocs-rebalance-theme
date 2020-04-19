@@ -108,15 +108,15 @@
                         
                         <!--<h1 id="search">Search Results</h1>-->
 
-                        <form action="../../search.html" method="get">
-                            <input name="q" id="mkdocs-search-query" type="text"
+                        <form class="search-form" action="../../search.html" method="get">
+							<label>
+							<span class="screen-reader-text">Search for:</span>
+                            <input class="search-field" name="q" id="mkdocs-search-query" type="text"
                                 placeholder="Search ..." >
+							</label>
+                            <input type="submit" class="search-submit"
+                                                     value="Search">
                         </form>
-                            <!--
-                            <div id="mkdocs-search-results">
-                                    Sorry, page not found.
-                            </div>
-                            -->
                         
                         </aside>
                     </div>
