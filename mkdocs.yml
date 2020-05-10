@@ -7,5 +7,6 @@ theme:
 
 plugins:
   - search
+  - datesort
   - paginate:
       max_items: 6

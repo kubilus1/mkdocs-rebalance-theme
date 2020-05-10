@@ -2,8 +2,8 @@ FROM ubuntu:bionic
 
 RUN apt-get update && apt-get install python3-pip git -y
 RUN python3 -m pip install -U pip
-RUN python3 -m pip install mkdocs
-RUN python3 -m pip install mkdocs-paginate-plugin
+#RUN python3 -m pip install mkdocs
+#RUN python3 -m pip install mkdocs-paginate-plugin>=0.0.4
 
 COPY . /tmp/themes/
 RUN python3 -m pip install /tmp/themes/

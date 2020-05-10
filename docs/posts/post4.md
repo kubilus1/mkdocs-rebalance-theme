@@ -3,7 +3,7 @@ title: Still posting!
 featured_image: images/alligator1.jpeg
 tags: [gator, alligator, friends]
 author: Jimmy McFace
-date: 01/01/2001
+date: 01/04/2001
 index: 4
 ---
 Look at me, still makings posts!  Gonna keep posting.  Post post post and more

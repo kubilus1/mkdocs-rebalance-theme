@@ -6,7 +6,7 @@
     </a></div>-->
 
     {% if nav_item.children %}
-    {% for nav_item in ((nav_item.children)|sort(attribute="meta.index",reverse=True))|paginate(page=page) %}
+    {% for nav_item in (nav_item.children) | paginate(page=page) %}
     {# % for nav_item in ((nav_item.children)|sort(attribute="meta.index",reverse=True))[page.start_idx:page.end_idx] % #}
         {% if nav_item.is_page %}
         <article class="card post type-post status-publish format-standard hentry" >
