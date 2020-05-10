@@ -1,6 +1,6 @@
 ---
 title: Still posting!
-featured_image: /images/alligator1.jpeg
+featured_image: images/alligator1.jpeg
 tags: [gator, alligator, friends]
 author: Jimmy McFace
 date: 01/01/2001
