@@ -1,12 +1,13 @@
-<article class="card post type-post status-publish format-standard hentry" >
+<article class="card post {% if nav_item.meta.featured_image %}
+         has-post-thumbnail {% endif %} type-post status-publish format-standard hentry" >
     <div class="entry-image-section">
     <a href="{{ nav_item.url|url }}" class="entry-image-link">
-        <figure class="entry-image">
             {% if nav_item.meta.featured_image %}
+        <figure class="entry-image">
             <img width="288" max-height="342" 
                                 src="{% if not nav_item.meta.featured_image.startswith('http') %}{{ config.site_url|url }}{% endif %}{{ nav_item.meta.featured_image }}">
-            {% endif %}
         </figure>
+            {% endif %}
     </a>
     </div>
     <a href="{{ nav_item.url|url }}">
