@@ -1,0 +1,27 @@
+<article class="card post type-post status-publish format-standard hentry" >
+    <div class="entry-image-section">
+    <a href="{{ nav_item.url|url }}" class="entry-image-link">
+        <figure class="entry-image">
+            {% if nav_item.meta.featured_image %}
+            <img width="288" max-height="342" 
+                                src="{% if not nav_item.meta.featured_image.startswith('http') %}{{ config.site_url|url }}{% endif %}{{ nav_item.meta.featured_image }}">
+            {% endif %}
+        </figure>
+    </a>
+    </div>
+    <a href="{{ nav_item.url|url }}">
+    <header id="masthead" class="entry-header">
+    <h1 class="entry-title">{{ nav_item.title }}</h1>
+    </header>
+    </a>
+    <div class="entry-content">
+    {{ nav_item.content|truncate }}
+    </div>
+    <footer class="entry-meta">
+        <span class="entry-tags">
+        {% for tag in nav_item.meta.tags %}
+        <a href="{{ config.site_url|url}}tag/{{ tag }}/" rel="tag">{{ tag }}</a>
+        {% endfor %}
+        </span>
+    </footer>
+</article>
