@@ -10,3 +10,7 @@ date: 1/6/2001
 ---
 
 This is the sixth post.
+
+```
+# A code block
+```
