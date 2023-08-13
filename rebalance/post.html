@@ -51,3 +51,10 @@
 {{ page.content }}
 </div>
 </article>
+
+{% if config.theme.facebook_comment_appid %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId={{ config.theme.facebook_comment_appid }}&autoLogAppEvents=1" nonce="H1M9neG0"></script>
+
+<div class="fb-comments" data-href="{{ page.canonical_url|url }}" data-numposts="5" data-width=""></div>
+{% endif %}
