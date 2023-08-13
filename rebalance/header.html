@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ config.site_url|url }}style.css" type="text/css" media='all' />
+    <link rel="stylesheet" href="{{ config.site_url|url }}font-awesome/font-awesome.css"
+    type="text/css" media='all'/>
+
+   <style type="text/css" media="screen">
+        html { margin-top: 32px !important; }
+        * html body { margin-top: 32px !important; }
+        @media screen and ( max-width: 782px ) {
+            html { margin-top: 46px !important; }
+            * html body { margin-top: 46px !important; }
+        }
+    </style>
+
+    {% if config.theme.google_adsense %}
+    <script data-ad-client="{{ config.theme.google_adsense }}" async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {% endif %}
+
+    {% if config.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.google_analytics[0] }}"></script>
+    {% endif %}
+
+    <!--<script src="{{ 'js/jquery-1.10.2.min.js'|url }}" defer></script>-->
+    <script src="{{ 'search/main.js'|url }}" defer></script>
+    <!--<script src="{{ 'js/bootstrap.min.js'|url }}" defer></script>-->
+
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  </head>
+
+  <body {% if page and page.meta.homepage %}
+    class="home blog"
+    {% else %}
+    class="post-template-default single single-post single-format-standard group-blog cusomtize-support"
+    {% endif %}>
+		<div id="page" class="site" style="height: auto !important;">
+			<header id="masthead" class="site-header" role="banner">
+				<div class="col-width header-wrap">
+					<div class="site-heading">
+						<div class="site-branding">
+						<p class="site-title"><a href="{{ config.site_url }}" rel="home">
+							{{ config.site_name }}
+						</a></p>
+						</div>
+						<nav class="social-navigation" role="navigation">
+							<div class="social-menu-wrap">
+					<ul id="menu-social-media" class="social-menu"><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="http://www.facebook.com"><span>Facebook</span></a></li>
+					<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="http://www.linkedin.com"><span>LinkedIn</span></a></li>
+					<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="http://www.twitter.com"><span>Twitter</span></a></li>
+					<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="http://www.instagram.com"><span>Instagram</span></a></li>
+							</div>
+						</nav>
+					</div>
+				</div>
+				<div class="col-width sub-header-wrap">
+					<p class="site-description">{{ config.site_description }}</p>
+				</div>
+			</header>
+
+
