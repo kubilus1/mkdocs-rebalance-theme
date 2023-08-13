@@ -4,6 +4,8 @@ site_url: https://kubilus1.github.io/mkdocs-rebalance-theme/
 docs_dir: docs
 theme:
     name: rebalance
+    facebook_comment_appid: 749526962133490
+    google_adsense: ca-pub-0810613228728448 
 
 plugins:
   - search
