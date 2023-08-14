@@ -1,0 +1,16 @@
+<nav class="social-navigation" role="navigation">
+    <div class="social-menu-wrap">
+        <ul id="menu-social-media" class="social-menu">
+            {% for social in config.extra.social %}
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10">
+                <a href="{{ social.link }}"><span>{{ social.name }}</span></a>
+            </li>
+            {% endfor %}
+         <!--
+        <li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="http://www.facebook.com"><span>Facebook</span></a></li>
+        <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="http://www.linkedin.com"><span>LinkedIn</span></a></li>
+        <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="http://www.twitter.com"><span>Twitter</span></a></li>
+        <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="http://www.instagram.com"><span>Instagram</span></a></li>
+         -->
+    </div>
+</nav>

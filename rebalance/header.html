@@ -1,0 +1,15 @@
+<header id="masthead" class="site-header" role="banner">
+	<div class="col-width header-wrap">
+		<div class="site-heading">
+			<div class="site-branding">
+			<p class="site-title"><a href="{{ config.site_url }}" rel="home">
+				{{ config.site_name }}
+			</a></p>
+			</div>
+            {% include 'social.html' %}
+		</div>
+	</div>
+	<div class="col-width sub-header-wrap">
+		<p class="site-description">{{ config.site_description }}</p>
+	</div>
+</header>
