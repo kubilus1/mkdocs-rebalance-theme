@@ -4,11 +4,27 @@ site_url: https://kubilus1.github.io/mkdocs-rebalance-theme/
 docs_dir: docs
 theme:
     name: rebalance
+    # Enable comments via a Facebook application id
     facebook_comment_appid: 0123456789
+    # Integrate adsense if desired
     google_adsense: ca-pub-0123456789
 
 plugins:
+  # Enable search via plugin
   - search
+  # Datesort will allow sorting posts by date
   - datesort
+  # Paginate will limit number of posts per page
   - paginate:
       max_items: 6
+
+
+extra:
+  # Enable various social media links
+  social:
+    - type: 'github'
+      link: 'https://github.com/kubilus1/mkdocs-rebalance-theme'
+    - type: 'facebook'
+      link: 'https://www.facebook.com'
+    - type: 'reddit'
+      link: 'https://www.reddit.com'

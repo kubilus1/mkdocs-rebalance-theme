@@ -1,8 +1,18 @@
-{% include 'header.html' %}
+<!DOCTYPE html>
+<html>
+{% include 'head.html' %}
 
-			<div id="content" class="site-content clear">
+  <body {% if page and page.meta.homepage %}
+    class="home blog"
+    {% else %}
+    class="post-template-default single single-post single-format-standard group-blog cusomtize-support"
+    {% endif %}>
+		<div id="page" class="site" style="height: auto !important;">
 
-				<div class="col-width">
+            {% include 'header.html' %}
+
+            <div id="content" class="site-content clear">
+                <div class="col-width">
                     {% block content %}
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main" role="main">
@@ -19,16 +29,25 @@
                         <!--<h1 id="search">Search Results</h1>-->
 
                         <form class="search-form" action="{{ base_url }}/search.html" method="get">
-							<label>
-							<span class="screen-reader-text">Search for:</span>
+                            <label>
+                            <span class="screen-reader-text">Search for:</span>
                             <input class="search-field" name="q" id="mkdocs-search-query" type="text"
                                 placeholder="Search ..." >
-							</label>
+                            </label>
                             <input type="submit" class="search-submit"
-                                                     value="Search">
+                                                    value="Search">
                         </form>
                         {% endif %}
                         </aside>
                     </div>
                     {% endblock %}
-{% include 'footer.html' %}
+
+                    {% include 'footer.html' %}
+
+                </div>
+			</div>
+		</div>
+		<hr>
+        <script>var base_url = '{{ base_url }}';</script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ config.site_url|url }}style.css" type="text/css" media='all' />
+  <link rel="stylesheet" href="{{ config.site_url|url }}font-awesome/font-awesome.css"
+  type="text/css" media='all'/>
+
+ <style type="text/css" media="screen">
+      html { margin-top: 32px !important; }
+      * html body { margin-top: 32px !important; }
+      @media screen and ( max-width: 782px ) {
+          html { margin-top: 46px !important; }
+          * html body { margin-top: 46px !important; }
+      }
+  </style>
+
+  {% if config.theme.google_adsense %}
+  <script data-ad-client="{{ config.theme.google_adsense }}" async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  {% endif %}
+
+  {% if config.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.google_analytics[0] }}"></script>
+  {% endif %}
+
+  <!--<script src="{{ 'js/jquery-1.10.2.min.js'|url }}" defer></script>-->
+  <script src="{{ 'search/main.js'|url }}" defer></script>
+  <!--<script src="{{ 'js/bootstrap.min.js'|url }}" defer></script>-->
+
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+</head>
