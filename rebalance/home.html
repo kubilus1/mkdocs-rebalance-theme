@@ -1,6 +1,6 @@
 <div id="infinite-wrap">
 
-    {% for nav_item in pages | map(attribute="page") | rejectattr("meta.homepage") | list | paginate(page=page) %}
+    {% for nav_item in pages | map(attribute="page") | rejectattr("meta.hidden") | list | paginate(page=page) %}
         {% include 'card.html' %}
     {% endfor %}
 
