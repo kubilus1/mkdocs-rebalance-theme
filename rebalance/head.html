@@ -1,4 +1,17 @@
 <head>
+  {% if config.theme.google_analytics %} 
+  <!-- Google tag (gtag.js) -->
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id={{ config.theme.google_analytics }}"></script>
+  <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ config.theme.google_analytics }}');
+  </script>
+  {% endif %}
+    
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ config.site_url|url }}style.css" type="text/css" media='all' />
