@@ -6,7 +6,7 @@ this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
         long_description = f.read()
 
-VERSION = '0.0.18'
+VERSION = '0.0.19'
 
 setup(
     name="mkdocs-rebalance-theme",
@@ -20,7 +20,7 @@ setup(
     author_email='mattkubilus@gmail.com',
     install_requires=[
         'mkdocs>=0.17',
-        'mkdocs-paginate-plugin>=0.0.4',
+        'mkdocs-paginate-plugin>=0.0.6',
         'mkdocs-datesort-plugin>=0.0.2'
     ],
     packages=find_packages(),

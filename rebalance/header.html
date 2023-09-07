@@ -1,15 +1,29 @@
 <header id="masthead" class="site-header" role="banner">
-	<div class="col-width header-wrap">
-		<div class="site-heading">
-			<div class="site-branding">
-			<p class="site-title"><a href="{{ config.site_url }}" rel="home">
-				{{ config.site_name }}
-			</a></p>
-			</div>
+    <div class="col-width header-wrap">
+        <div class="site-heading">
+            <div class="site-branding">
+            <p class="site-title"><a href="{{ config.site_url }}" rel="home">
+                {{ config.site_name }}
+            </a></p>
+            </div>
             {% include 'social.html' %}
-		</div>
-	</div>
-	<div class="col-width sub-header-wrap">
-		<p class="site-description">{{ config.site_description }}</p>
-	</div>
+        </div>
+    </div>
+    <div class="col-width sub-header-wrap">
+        <p class="site-description">{{ config.site_description }}</p>
+
+        <nav id="site-navigation" class="main-navigation toggled-on" role="navigation" aria-expanded="false">
+            <div class="menu-primary-container toggled-on" aria-expanded="false">
+
+            {% for nav_item in pages | map(attribute="page") | selectattr("meta.menu", "defined") | selectattr("meta.menu", "equalto", True) | rejectattr("generated") | sort(attribute="meta.index") | list %}
+                <ul id="header-menu" class="menu">
+                    <li class="menu-item">
+                        <a href="{{ nav_item.url|url }}" aria-current="page">{{ nav_item.title }}</a>
+                    </li>
+                </ul>
+            {% endfor %}
+
+            </div>
+        </nav>
+    </div>
 </header>
